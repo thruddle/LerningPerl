@@ -10,16 +10,15 @@ use strict;
 # output or on separate lines? Could you make the output appear in either
 # style?
 
-my $inline = 0;
+my $inline = 1;
 
 
-say "Enter Strings : ";
-chomp( my @lines = <STDIN> );
-@lines = sort @lines;
-print "Sorted Strings : ";
+say "Enter Strings :";
+chomp( my @lines = sort <STDIN> );
+print "Sorted Strings :";
 foreach my $line (@lines) {
    if ( $inline ) {
-     print "$line ";
+     print " $line";
    } else {
      print "\n$line";
    };
