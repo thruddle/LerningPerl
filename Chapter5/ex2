@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Write a program that asks the user to enter a list of strings on separate
+# lines, printing each string in a right-justified, 20-character column. To
+# be certain that the output is in the proper columns, print a "ruler line"
+# of digits as well. (This is simply a debugging aid.) Make sure that you're
+# not using a 19-character column by mistake!
+
+say "Enter list of strings:";
+my @lines = <STDIN>;
+my @ruler = (1..9,0)x2;
+say( ( 1..9, 0 ) x6 );
+printf( "%21s" x ( @lines ), @lines );
