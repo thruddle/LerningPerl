@@ -9,7 +9,7 @@ use strict;
 
 chomp( my @input = <STDIN>);
 foreach my $line ( @input ) {
-  if ( $line =~ /\W\Z/) {
+  if ( $line =~ /\h\Z/) {
     print "$line.\n";
   }
 }
