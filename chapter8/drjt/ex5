@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Extra credit exercise: modify the program from the previous exercise so that
+# immediately following the word ending in a it will also capture up-to-five
+# characters (if there are that many characters, of course) in a separate
+# capture variable. Update the code to display both capture variables. For
+# example, if the input string says I saw Wilma yesterday, the up-to-five
+# characters are " yest" (with the leading space). If the input is I, Wilma!,
+# the extra capture should have just one character. Does your pattern still
+# match just plain wilma?
+
+while (<>) {                   # take one input line at a time
+    chomp;
+    if (/(?<word>\b\w*a\b)(?<post>.{0,5})/i) {
+        print "'word' contains '$+{word}'\n";  # the special match vars
+        print "'post' contains '$+{post}'\n";
+    } else {
+        print "No match: |$_|\n";
+    }
+}
