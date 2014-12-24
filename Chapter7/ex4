@@ -3,15 +3,14 @@ use 5.010;
 use warnings;
 use strict;
 
-# Make a program that prints each line of its input that contains a period (.),
-# ignoring other lines of input. Try it on the small text file from the previous
-# exercise: does it notice Mr. Slate?
+# Make a program that prints each line that has a word that is capitalized but
+# not ALL capitalized. Does it match Fred but neither fred nor FRED?
 
 say "Please input some strings:";
 chomp( my @lines = <STDIN> );
 say "Lines containing a word that contains some capital letters, but is not all caps";
 foreach ( @lines ) {
-  if ( /[A-Z]+[a-z]+/ ) {
+  if ( /[A-Z][a-z]+/ ) {
     say $_;
   };
 };
