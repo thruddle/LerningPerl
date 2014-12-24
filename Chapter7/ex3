@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Make a program that prints each line of its input that contains a period (.),
+# ignoring other lines of input. Try it on the small text file from the previous
+# exercise: does it notice Mr. Slate?
+
+say "Please input some strings:";
+chomp( my @lines = <STDIN> );
+say "Lines containing .";
+foreach ( @lines ) {
+  if ( /\./ ) {
+    say $_;
+  };
+};
+
