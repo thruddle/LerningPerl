@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use 5.014;
+use warnings;
+use strict;
+
+print "First Number : ";
+chomp( my $first = <STDIN> );
+print "Second Number : ";
+chomp( my $second = <STDIN> );
+say "Product is ", $first*$second;
