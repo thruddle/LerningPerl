@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Modify the previous program to let the user choose the column width, so
+# that entering 30, hello, good-bye (on separate lines) would put the strings
+# at the 30th column. (Hint: see Interpolation of Scalar Variables into Strings
+# in Chapter 2, about controlling variable interpolation.) For extra credit,
+# make the ruler line longer when the selected width is larger.
+print "Enter column width, followed by list of strings: ";
+my @lines = <STDIN>;
+my $num = ( shift @lines ) + 1;
+say( ( 1..9, 0 ) x( $num/10 + 1 ) );
+printf( "%${num}s" x @lines, @lines );
