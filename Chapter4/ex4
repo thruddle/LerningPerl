@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+sub greet {
+  if ( @_ < 1 ) {
+    die "greet needs atleast one argument! stopped";
+  };
+  state $last;
+  my $name = pop @_;
+  if ( defined $last ) {
+    say "Hello $name! $last is also here!";
+  } else {
+    say "Hello $name! You are the first one here!";
+  };
+  $last = $name;
+};
+
+greet( "Fred" );
+greet( "Barney" );

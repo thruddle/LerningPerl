@@ -1,0 +1,40 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Extra credit exercise: write a subroutine, called &above_average, which
+# takes a list of numbers and returns the ones which are above the average
+# (mean). (Hint: make another subroutine that calculates the average by
+# dividing the total by the number of items.) Try your subroutine in
+# this test program.
+
+sub total {
+  my $output = 0;
+  foreach my $num (@_) {
+    $output += $num;
+  };
+  return $output;
+};
+
+sub mean {
+  return ( total @_ ) / @_;
+};
+
+sub above_average {
+  my $ave = mean @_;
+  my @out;
+  foreach (@_) {
+    if ( $_ > $ave ) {
+      push @out, $_;
+    };
+  };
+  return @out;
+};
+
+my @fred = above_average(1..10);
+print "\@fred is @fred\n";
+print "(Should be 6 7 8 9 10)\n";
+my @barney = above_average(100, 1..10);
+print "\@barney is @barney\n";
+print "(Should be just 100)\n";

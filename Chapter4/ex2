@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Using the subroutine from the previous problem, make a program to calculate
+# the sum of the numbers from 1 to 1,000.
+
+
+sub total {
+  my $output = 0;
+  foreach my $num (@_) {
+    $output += $num;
+  };
+  return $output;
+}
+
+my @fred = 1..1000;
+my $fred_total = total(@fred);
+print "The total of numbers from 1 to 1k is $fred_total.\n";
