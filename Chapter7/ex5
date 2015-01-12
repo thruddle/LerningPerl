@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Make a program that prints each line that has two of the same nonwhitespace
+# characters next to each other. It should match lines that contain words such
+# as Mississippi, Bamm-Bamm, or llama.
+
+say "Please input some strings:";
+chomp( my @lines = <STDIN> );
+say "output:";
+foreach ( @lines ) {
+  if ( /([^\s])\1/ ) {
+    say $_;
+  };
+};
+

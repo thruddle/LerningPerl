@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+use 5.010;
+use warnings;
+use strict;
+
+# Modify the previous program to allow Fred to match as well. Does it match now if your input string is Fred, frederick, or Alfred? (Add lines with these names to the text file.)
+
+say "Please input some strings:";
+chomp( my @lines = <STDIN> );
+say "Lines containing fred";
+foreach ( @lines ) {
+  if ( /[Ff]red/ ) {
+    say $_;
+  };
+};
